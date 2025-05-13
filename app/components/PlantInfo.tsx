@@ -1,5 +1,4 @@
-// PlantInfo.tsx
-import { PlantInfoProps } from "@/types/types"; // Import the PlantInfoProps type from types.ts
+import { PlantInfoProps } from "@/types/types";
 import Image from "next/image";
 import Table from "./common/Table";
 
@@ -28,11 +27,16 @@ export default function PlantInfo({ info, imageUrl }: PlantInfoProps) {
             {info.description || "No description available."}
           </p>
           <div className="bg-green-50 rounded-lg p-6 mb-6">
+            {/* Pass all necessary properties to Table */}
             <Table
               info={{
+                name: info.name,
                 scientificName: info.scientificName,
                 family: info.family,
                 nativeRegion: info.nativeRegion,
+                description: info.description,
+                careInstructions: info.careInstructions,
+                medicianValue: info.medicianValue,
               }}
             />
           </div>
