@@ -1,4 +1,5 @@
-import { PlantInfoProps } from "@/types/types";
+// PlantInfo.tsx
+import { PlantInfoProps } from "@/types/types"; // Import the PlantInfoProps type from types.ts
 import Image from "next/image";
 import Table from "./common/Table";
 
@@ -24,23 +25,25 @@ export default function PlantInfo({ info, imageUrl }: PlantInfoProps) {
             {info.name || "Plant Information"}
           </h2>
           <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-            {info.description}
+            {info.description || "No description available."}
           </p>
           <div className="bg-green-50 rounded-lg p-6 mb-6">
-            <Table info={info} />
+            <Table
+              info={{
+                scientificName: info.scientificName,
+                family: info.family,
+                nativeRegion: info.nativeRegion,
+              }}
+            />
           </div>
         </div>
       </div>
       <div className="mt-8">
-        <h3 className="text-2xl font-semibold mb-4 text-green-600">
-          Care Instructions
-        </h3>
+        <h3 className="text-2xl font-semibold mb-4 text-green-600">Care Instructions</h3>
         <p className="text-gray-700 leading-relaxed">{info.careInstructions}</p>
       </div>
       <div className="mt-8">
-        <h3 className="text-2xl font-semibold mb-4 text-green-600">
-          Medicinal Value
-        </h3>
+        <h3 className="text-2xl font-semibold mb-4 text-green-600">Medicinal Value</h3>
         <p className="text-gray-700 leading-relaxed">{info.medicianValue}</p>
       </div>
     </div>
