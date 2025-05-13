@@ -1,4 +1,5 @@
-import { PlantInfoType } from "@/types/types";
+// Table.tsx
+import { PlantInfoType } from "@/types/types"; // Import the PlantInfoType from types.ts
 import React from "react";
 
 type TableProps = {
@@ -10,9 +11,7 @@ const Table = ({ info }: TableProps) => {
     <table className="w-full">
       <tbody>
         <tr>
-          <td className="font-semibold pr-4 py-2 text-green-800">
-            Scientific Name:
-          </td>
+          <td className="font-semibold pr-4 py-2 text-green-800">Scientific Name:</td>
           <td className="text-gray-700">{info.scientificName}</td>
         </tr>
         <tr>
@@ -20,9 +19,7 @@ const Table = ({ info }: TableProps) => {
           <td className="text-gray-700">{info.family}</td>
         </tr>
         <tr>
-          <td className="font-semibold pr-4 py-2 text-green-800">
-            Native Region:
-          </td>
+          <td className="font-semibold pr-4 py-2 text-green-800">Native Region:</td>
           <td className="text-gray-700">{info.nativeRegion}</td>
         </tr>
       </tbody>
